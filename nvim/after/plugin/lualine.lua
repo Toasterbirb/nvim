@@ -53,8 +53,8 @@ require("lualine").setup({
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = { "filename" },
-		lualine_x = { get_wordcount, "encoding", "filetype" },
-		lualine_y = { "hostname", "progress" },
+		lualine_x = { get_wordcount, "hostname", "encoding", "filetype" },
+		lualine_y = { "progress" },
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
