@@ -1,0 +1,5 @@
+-- vim.g.ale_linters = {
+-- 	cpp = { },
+-- 	sh = {},
+-- 	asm = {},
+-- }

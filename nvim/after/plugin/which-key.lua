@@ -1,0 +1,8 @@
+-- require("which-key").setup({
+-- 	icons = {
+-- 		separator = "-",
+-- 	},
+-- 	triggers_blacklist = {
+-- 		n = { '"' },
+-- 	},
+-- })
