@@ -33,6 +33,7 @@ vim.keymap.set("n", "<leader>ww", vim.cmd.VimwikiIndex, { desc = "Open the vimwi
 vim.keymap.set("v", "<leader>cs", ":sort<CR>", { desc = "Sort the selection" })
 vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action, { desc = "Apply fix" })
 vim.keymap.set("v", "<leader>cn", ":s/\\n/ /g<CR>", { desc = "Replace newlines with whitespace" })
+vim.keymap.set("n", "<leader>cy", 'gg<S-v>G"+y', { desc = "Copy the entire file to system clipboard" })
 
 -- Split and window movement
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Move to the split on the left side" })
