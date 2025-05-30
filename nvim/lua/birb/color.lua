@@ -1,9 +1,9 @@
 -- Colorscheme
-vim.cmd("set bg=")
+vim.cmd("set bg=dark")
 
 require("kanagawa").setup({
 	dimInactive = false,
-	background = { light = "lotus", dark = "dragon" },
+	background = { light = "lotus", dark = "wave" },
 	overrides = function(colors)
 		local theme = colors.theme
 		return {
