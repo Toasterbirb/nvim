@@ -54,4 +54,10 @@ ls.add_snippets("tex", {
 		"@fig",
 		"\\begin{figure}[!htb]\n\t\\centering\n\t\\includegraphics[totalheight=6cm]{${1}}\n\t\\caption{${2}}\n\t\\label{fig:${3}}\n\\end{figure}\n"
 	),
+
+	-- code snippet
+	ls.parser.parse_snippet(
+		"@lst",
+		"\\begin{lstlisting}[caption={${1}}, label={lst:${2}}, language=${3}]\n${4}\n\\end{lstlisting}\n"
+	),
 })
