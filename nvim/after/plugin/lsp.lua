@@ -12,8 +12,8 @@ require("mason-lspconfig").setup({
 		"clangd",
 		"lua_ls",
 		"pyright",
-		"bashls",
 		"cmake",
+		"bashls",
 		"dockerls",
 	},
 	handlers = {
