@@ -129,11 +129,12 @@ vim.diagnostic.config({
 	},
 })
 
--- Configure individual language servers
-local lspconfig = require("lspconfig")
+-----------------------------------------------
+-- Configure the individual language servers --
+-----------------------------------------------
 
 -- lua_ls
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
 			runtime = {
@@ -161,23 +162,19 @@ lspconfig.lua_ls.setup({
 })
 
 -- assembly
-require("lspconfig").asm_lsp.setup({
+vim.lsp.config("asm_lsp", {
 	command = "asm-lsp",
 	filetypes = { "asm", "nasm", "s", "S" },
 })
 
 -- python
-lspconfig.pyright.setup({})
+vim.lsp.enable("pyright")
 
 -- glsl analyzer
-require("lspconfig").glsl_analyzer.setup({})
+vim.lsp.enable("glsl_analyzer")
 
--- This caused clangd to get loaded twice
--- require("lspconfig").clangd.setup({
--- 	cmd = { "clangd", "--offset-encoding=utf-8" },
--- })
-
-require("lspconfig").texlab.setup({})
+-- LaTeX
+vim.lsp.enable("texlab")
 
 -- html, css and javascript
 --Enable (broadcasting) snippet capability for completion
@@ -185,26 +182,23 @@ require("lspconfig").texlab.setup({})
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require("lspconfig").html.setup({
+vim.lsp.config("html", {
 	capabilities = capabilities,
 })
 
--- awk
-require("lspconfig").awk_ls.setup({})
-
 -- css
-require("lspconfig").cssls.setup({})
+vim.lsp.enable("cssls")
 
 -- rust
-require("lspconfig")["rust_analyzer"].setup({
+vim.lsp.config("rust_analyzer", {
 	capabilities = capabilities,
 })
 
 -- ansible
-require("lspconfig").ansiblels.setup({})
+vim.lsp.enable("ansiblels")
 
 -- nim
-require("lspconfig").nim_langserver.setup({
+vim.lsp.config("nim_langserver", {
 	settings = {
 		nim = {
 			logNimsuggest = false,
