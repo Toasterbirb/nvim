@@ -93,7 +93,7 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "neorg" },
 	}, {
-		{ name = "buffer" },
+		-- { name = "buffer" },
 	}),
 })
 
@@ -172,15 +172,17 @@ lspconfig.pyright.setup({})
 -- glsl analyzer
 require("lspconfig").glsl_analyzer.setup({})
 
-require("lspconfig").clangd.setup({
-	cmd = { "clangd", "--offset-encoding=utf-8" },
-})
+-- This caused clangd to get loaded twice
+-- require("lspconfig").clangd.setup({
+-- 	cmd = { "clangd", "--offset-encoding=utf-8" },
+-- })
 
 require("lspconfig").texlab.setup({})
 
 -- html, css and javascript
 --Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require("lspconfig").html.setup({
@@ -189,3 +191,24 @@ require("lspconfig").html.setup({
 
 -- awk
 require("lspconfig").awk_ls.setup({})
+
+-- css
+require("lspconfig").cssls.setup({})
+
+-- rust
+require("lspconfig")["rust_analyzer"].setup({
+	capabilities = capabilities,
+})
+
+-- ansible
+require("lspconfig").ansiblels.setup({})
+
+-- nim
+require("lspconfig").nim_langserver.setup({
+	settings = {
+		nim = {
+			logNimsuggest = false,
+			notificationVerbosity = "none",
+		},
+	},
+})

@@ -39,6 +39,10 @@ require("formatter").setup({
 			end,
 		},
 
+		html = {
+			require("formatter.filetypes.html").htmlbeautifier,
+		},
+
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
 		["*"] = {
