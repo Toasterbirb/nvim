@@ -105,14 +105,4 @@ require("lazy").setup({
 
 	-- Code formatting
 	"mhartington/formatter.nvim",
-
-	-- Folding
-	{
-		"kevinhwang91/nvim-ufo",
-		dependencies = "kevinhwang91/promise-async",
-	},
-
-	-- Note taking
-	"folke/zen-mode.nvim",
-	"crispgm/telescope-heading.nvim", -- markdown headings
 })
