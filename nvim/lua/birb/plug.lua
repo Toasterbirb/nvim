@@ -62,7 +62,11 @@ require("lazy").setup({
 	},
 
 	-- Code highlighting and diagnostics
-	{ "nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		cmd = "TSUpdate",
+		branch = "master",
+	},
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -95,18 +99,6 @@ require("lazy").setup({
 
 	-- Code commentting
 	"numToStr/Comment.nvim",
-
-	-- Documentation
-	{
-		"danymat/neogen",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = true,
-		-- Uncomment next line if you want to follow only stable versions
-		-- version = "*"
-	},
-
-	-- Floating terminal
-	"voldikss/vim-floaterm",
 
 	-- Notifications
 	"rcarriga/nvim-notify",
